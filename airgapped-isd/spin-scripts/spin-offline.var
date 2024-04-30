@@ -1,0 +1,63 @@
+## Donot uncomment variables here with prefix unset
+##Common
+unset knamespace
+unset olroot
+unset spinver
+unset dcr
+unset dockerlogin
+unset dockerpwd
+##Net connected machine's scripts
+unset skipBomPull
+unset skipHelmImages
+unset skipBomImages
+unset skipOverrideImages
+unset skipImagesSave
+unset skipImagesPull
+unset skipImagesTar
+unset skipGetBomsScript
+unset skipGetImagesScript
+unset skipChartDownload
+unset skipFinalTarPkg
+##Offline machine's scripts 
+unset skipHelmValuesSetup
+unset skipCreatingPushList
+unset skipUntaringImages
+unset skipLoadingImages
+unset skipTaggingImages
+unset skipImages2Registry
+unset skipCleaningLocalImages
+
+##Vars used in both Internet connected and disconnected machines
+#export olroot=""
+export spinver=1.28.6
+#export spinver=1.25.3
+export knamespace=offline
+#export helmcharturl=https://helmcharts.opsmx.com/spinnaker-2.2.6.tgz
+export helmcharturl=https://github.com/OpsMx/enterprise-spinnaker/releases/download/oes-4.0.10/oes-4.0.10.tgz
+
+##Net connected machine's scripts
+#export skipPrivateRegistry=true
+#export skipBomPull=true
+#export skipHelmImages=true
+#export skipBomImages=true
+#export skipOverrideImages=true
+#export skipImagesPull=true
+#export skipImagesSave=true
+#export skipImagesTar=true
+#export skipGetBomsScript=true
+#export skipGetImagesScript=true
+#export skipChartDownload=true
+#export skipFinalTarPkg=true
+
+##Offline machine's scripts 
+#export skipHelmValuesSetup=true
+#export skipCreatingPushList=true
+#export skipUntaringImages=true
+#export skipLoadingImages=true
+#export skipTaggingImages=true
+#export skipImages2Registry=true
+#export skipCleaningLocalImages=true
+#export skipPrivateRegistry=true
+#
+#export dcr=10.168.3.10:8082
+

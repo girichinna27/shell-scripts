@@ -1,0 +1,34 @@
+# Create a service-account in offline namespace
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sa-spinnaker
+  namespace: offline
+
+---
+# Create a role role-spinnaker in offline namespace
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: role-spinnaker
+  namespace: offline
+rules:
+- apiGroups: ["*"]
+  resources: ["*"]
+  verbs: ["*"]
+
+---
+# Create a rolebinding in offline namespace, to bind the service-account to role-spinnaker
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: rbind-spinnaker
+  namespace: offline
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: role-spinnaker
+subjects:
+- namespace: offline #Where serice-account exists
+  kind: ServiceAccount
+  name: sa-spinnaker

@@ -1,0 +1,56 @@
+# Title: Docker images to be pulled
+#
+# Purpose: This file is an input to pull the docker images 
+# (in addition to images found bom/<version>.yaml file) from Internet
+# Also, used as input to create partial values.yaml of the 
+# Helm-chart to override the images during Spinnaker deployment
+#
+# Notes: 'dependencies' section is mandatory, which contains the 
+# list of images that Spinnaker relies on.
+# 'overrides' section is optional, which contains any additional 
+# images to override any of the Spinnaker services
+
+dependencies:
+  halyard: quay.io/opsmxpublic/ubi8-spin-halyard:opsmx-1.40.0
+  minio: minio/minio:RELEASE.2020-01-03T19-12-21Z
+  redis: docker.io/bitnami/redis:5.0.7-debian-10-r0
+services:
+  gate: quay.io/opsmxpublic/ubi8-spin-gate:1.20.0
+  deck: quay.io/opsmxpublic/ubi8-oes-deck:3.5.1
+  clouddriver: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  clouddriver-caching: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  clouddriver-rw: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  clouddriver-ro: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  clouddriver-ro-deck: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  echo: quay.io/opsmxpublic/ubi8-spin-echo:2.15.2
+  echo-scheduler: quay.io/opsmxpublic/ubi8-spin-echo:2.15.2
+  echo-worker: quay.io/opsmxpublic/ubi8-spin-echo:2.15.2
+  fiat: quay.io/opsmxpublic/ubi8-spin-fiat:1.14.1
+  front50: quay.io/opsmxpublic/ubi8-oes-front50:0.26.1
+  igor: quay.io/opsmxpublic/ubi8-spin-igor:1.14.0
+  kayenta: quay.io/opsmxpublic/ubi8-spin-kayenta:0.19.0
+  orca: quay.io/opsmxpublic/ubi8-oes-orca:2.18.1
+  rosco: quay.io/opsmxpublic/ubi8-spin-rosco:0.23.0
+opsmx:
+  #Override with OpsMx Images
+  gate: quay.io/opsmxpublic/ubi8-spin-gate:1.20.0
+  deck: quay.io/opsmxpublic/ubi8-oes-deck:3.5.1
+  clouddriver: quay.io/opsmxpublic/ubi8-spin-clouddriver:7.2.2
+  echo: quay.io/opsmxpublic/ubi8-spin-echo:2.15.2
+  fiat: quay.io/opsmxpublic/ubi8-spin-fiat:1.14.1
+  front50: quay.io/opsmxpublic/ubi8-oes-front50:0.26.1
+  igor: quay.io/opsmxpublic/ubi8-spin-igor:1.14.0
+  kayenta: quay.io/opsmxpublic/ubi8-spin-kayenta:0.19.0
+  orca: quay.io/opsmxpublic/ubi8-oes-orca:2.18.1
+  rosco: quay.io/opsmxpublic/ubi8-spin-rosco:0.23.0
+
+  # OES Images
+  oes-init: quay.io/opsmxpublic/oes-init:v3
+  oes-visibility: quay.io/opsmxpublic/ubi8-oes-visibility:v3.8.3
+  oes-platform: quay.io/opsmxpublic/ubi8-oes-platform:v3.8.3
+  gate: quay.io/opsmxpublic/ubi8-gate:v3.8.3
+  forwarder-agent: quay.io/opsmxpublic/forwarder-agent:v20210426T105924
+  oes-dashboard: quay.io/opsmxpublic/ubi8-oes-dashboard:v3.8.3
+  oes-autopilot: quay.io/opsmxpublic/ubi8-oes-autopilot:v3.8.3
+  spin-gate: quay.io/opsmxpublic/ubi8-spin-gate:1.20.0
+  oes-db: quay.io/opsmxpublic/ubi8-oes-db:v2.0.0

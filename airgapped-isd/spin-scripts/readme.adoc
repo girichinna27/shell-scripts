@@ -1,0 +1,3 @@
+= Airgapped-Spinnaker
+
+Not every Customer has a Internet connected Kubernetes cluster. 
